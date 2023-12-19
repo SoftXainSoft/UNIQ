@@ -2,26 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url("/Hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.story-output {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-title {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.story-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  white-space: pre-wrap; /* Respects line breaks and white spaces */
+}
+
+.book-output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.book-page {
+  background-color: #f7f1e3; /* cremefarbener Hintergrund für den Bucheffekt */
+  border: 1px solid #ccc; /* graue Rahmenlinie */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Schatteneffekt */
+  padding: 20px;
+  width: 60%; /* Breite der Buchseite */
+  margin: 20px;
+  max-height: 600px; /* Maximale Höhe der Buchseite */
+  overflow-y: auto; /* Scrollbar, falls der Inhalt die maximale Höhe überschreitet */
+}
+
+.book-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.book-content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Abstand zwischen den Karten */
+}
+
+.card {
+  position: relative;
+  width: 250px; /* Standardbreite */
+  height: 250px; /* Höhe der Karte */
+  overflow: hidden; /* Verhindert Überlaufen des Inhalts */
+  /* weitere Styles für die Karte */
+}
+
+.card.wide {
+  width: 300px; /* Breitere Karte für card4.png */
+}
+
+.card-header {
+  position: absolute;
+  top: -30px; /* Position über der Karte */
+  left: 50%;
+  transform: translateX(-50%); /* Zentriert die Überschrift */
+  background: white; /* Hintergrund der Überschrift */
+  padding: 10px;
+  border-radius: 5px;
+  /* weitere Styles für die Überschrift */
+}
+
+.card-content {
+  position: absolute;
+  top: 50%; /* Zentriert den Inhalt in der Karte */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* weitere Styles für den Inhalt */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
